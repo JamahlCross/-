@@ -155,7 +155,7 @@ export const skills: Skill[] = [
     checkpoints: ["拳を下げすぎない", "腰を反らない", "打った後にガードへ戻す"],
     commonMistakes: ["腕を大きく振り上げる", "顎が上がる", "膝が内側に入る"],
     correctionTips: ["胸の前で小さく動かす", "鏡で拳の出発位置を見る", "無理に強く打たない"],
-    recommendedDrillIds: ["uppercut-form", "body-line-shadow", "slow-motion-shadow"]
+    recommendedDrillIds: ["uppercut-form", "body-target-shadow", "slow-motion-shadow"]
   },
   {
     id: "body-shot",
@@ -309,7 +309,7 @@ export const skills: Skill[] = [
     checkpoints: ["低くなりすぎない", "顔への戻りで顎を上げない", "最後はガード"],
     commonMistakes: ["上体が跳ねる", "2発目で手が伸びすぎる", "呼吸が止まる"],
     correctionTips: ["浅い上下差で始める", "体幹を固めすぎない", "回数を少なくする"],
-    recommendedDrillIds: ["body-face-combo", "body-line-shadow", "return-to-guard"]
+    recommendedDrillIds: ["body-face-combo", "body-target-shadow", "return-to-guard"]
   },
   {
     id: "punch-defense-punch",

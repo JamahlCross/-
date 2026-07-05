@@ -6,6 +6,10 @@
   color-scheme: light;
 }
 
+:root.dark {
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +24,11 @@ body {
   color: #172033;
 }
 
+.dark body {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
 button,
 input,
 select,
@@ -29,4 +38,114 @@ textarea {
 
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-train focus:ring-offset-2;
+}
+
+.dark .focus-ring {
+  @apply focus:ring-offset-slate-950;
+}
+
+.dark .bg-paper {
+  background-color: #0f172a;
+}
+
+.dark .bg-white,
+.dark .bg-white\/95 {
+  background-color: rgb(15 23 42 / 0.96);
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100 {
+  background-color: #1e293b;
+}
+
+.dark .hover\:bg-slate-100:hover {
+  background-color: #253449;
+}
+
+.dark .bg-blue-50 {
+  background-color: rgb(30 64 175 / 0.24);
+}
+
+.dark .bg-green-50 {
+  background-color: rgb(22 101 52 / 0.24);
+}
+
+.dark .bg-yellow-50 {
+  background-color: rgb(133 77 14 / 0.28);
+}
+
+.dark .bg-red-50 {
+  background-color: rgb(127 29 29 / 0.30);
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #334155;
+}
+
+.dark .border-blue-200 {
+  border-color: #1d4ed8;
+}
+
+.dark .border-green-200 {
+  border-color: #15803d;
+}
+
+.dark .border-yellow-200 {
+  border-color: #a16207;
+}
+
+.dark .border-red-200 {
+  border-color: #b91c1c;
+}
+
+.dark .text-ink,
+.dark .text-slate-700,
+.dark .text-slate-800,
+.dark .text-slate-900 {
+  color: #e5e7eb;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-600 {
+  color: #cbd5e1;
+}
+
+.dark .text-blue-800,
+.dark .text-blue-900,
+.dark .text-train {
+  color: #93c5fd;
+}
+
+.dark .text-green-700,
+.dark .text-green-800,
+.dark .text-green-900,
+.dark .text-safe {
+  color: #86efac;
+}
+
+.dark .text-yellow-800,
+.dark .text-yellow-900,
+.dark .text-caution {
+  color: #fde68a;
+}
+
+.dark .text-red-800,
+.dark .text-red-900,
+.dark .text-danger {
+  color: #fca5a5;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #0f172a;
+  border-color: #475569;
+  color: #e5e7eb;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8;
 }

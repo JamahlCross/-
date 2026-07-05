@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Activity, BarChart3, BookOpen, ClipboardCheck, Dumbbell, Home, ListChecks, ShieldCheck } from "lucide-react";
+import { Activity, BarChart3, BookOpen, ClipboardCheck, Dumbbell, Home, ListChecks, Moon, ShieldCheck, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 
 const navItems = [
@@ -18,6 +19,22 @@ const navItems = [
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("boxing.theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = saved === "dark" || saved === "light" ? saved : prefersDark ? "dark" : "light";
+    setTheme(initialTheme);
+    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("boxing.theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+  };
 
   return (
     <div className="min-h-screen bg-paper">
@@ -48,6 +65,15 @@ export function AppShell({ children }: { children: ReactNode }) {
               );
             })}
           </nav>
+          <button
+            className="focus-ring grid size-10 shrink-0 place-items-center rounded border border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
+            type="button"
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "ライトモードに切り替え" : "ダークモードに切り替え"}
+            title={theme === "dark" ? "ライトモード" : "ダークモード"}
+          >
+            {theme === "dark" ? <Sun className="size-5" aria-hidden /> : <Moon className="size-5" aria-hidden />}
+          </button>
         </div>
       </header>
       <main className="mx-auto max-w-7xl px-4 py-6 pb-28 md:py-8">{children}</main>
